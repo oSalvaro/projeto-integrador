@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <div class="img-perfil-div">
+        <img  class="img-perfil" src="assets/imagens/perfil.jpg" alt="">
+        
+      
+        <h2 class="usuario">Nome usuário</h2></div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="titulo-home">
+    <h3><strong>BEM-VINDO(A)</strong></h3>
+  </div>
+
+  <div class="atualizacoes">
+    <h3><strong>Atualizações: </strong></h3>
+  </div>
+
+  <div class="funcionalidades">
+    <h2><strong>Funcionalidades: </strong></h2>
+
+    <swiper-container>
+      <swiper-slide><app-funcionalidade1></app-funcionalidade1></swiper-slide>
+      <swiper-slide><app-funcionalidade2></app-funcionalidade2></swiper-slide>
+      <swiper-slide><app-funcionalidade3></app-funcionalidade3></swiper-slide>
+    </swiper-container>
+  </div>
+</ion-content>
