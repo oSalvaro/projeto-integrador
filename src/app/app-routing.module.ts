@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'funcionalidade3',
     loadChildren: () => import('./home/funcionalidade3/funcionalidade3.module').then( m => m.Funcionalidade3PageModule)
   },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({
