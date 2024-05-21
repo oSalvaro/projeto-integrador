@@ -47,6 +47,18 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'recuperar',
+    loadChildren: () => import('./recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'cadastro-gerador-energia',
+    loadChildren: () => import('./cadastro-gerador-energia/cadastro-gerador-energia.module').then( m => m.CadastroGeradorEnergiaPageModule)
+  },
 ];
 
 @NgModule({

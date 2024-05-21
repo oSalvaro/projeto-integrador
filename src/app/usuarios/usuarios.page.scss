@@ -1,0 +1,37 @@
+.cabecalho{
+    --background: #92C74F;
+    --color: white;
+}
+
+.usuario{
+    margin: 5% 0 1% 0;
+    padding: 3% 2% 3% 2%;
+    box-shadow: 1px 1px 1px 0 rgba(173, 173, 173, 0.77);
+}
+
+    
+    .item-delete{
+        float: right;
+        border-radius: 5px;
+    }
+
+    .item-edit{
+        float: right;
+        margin-right: 1%;
+        border-radius: 5px;
+    }
+
+
+    .delete{
+        float: right;
+        padding-right: 5%;
+    }
+
+.botao-add-fab{
+    margin: 0 2% 1% 0;
+}
+
+.botao-add{
+    --background: #5aac31;
+    --background-activated: #429b15;
+}

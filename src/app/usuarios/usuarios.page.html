@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-toolbar class="cabecalho">
+      <ion-title>{{ title }}</ion-title>
+      
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+    <ion-list class="usuario">
+      
+      Usuário 1
+    
+      <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true" >
+        <ion-icon class="delete" color="danger" slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+
+        <ion-buttons [collapse]="true"  class="item-edit">
+          <ion-button>
+            
+            <ion-icon class="editar" slot="end" name="create"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+    
+    </ion-list>
+    
+    <ion-fab class="botao-add-fab" slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button class="botao-add">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
