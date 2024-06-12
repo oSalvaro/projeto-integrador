@@ -14,11 +14,11 @@
 
   <div class="formulario">
     <label class="label-form" for="descricao"><strong>Descrição:</strong></label>
-    <ion-input class="input-descricao" id="descricao" fill="outline" placeholder="Descricao"></ion-input>
+    <ion-input [(ngModel)]="descricao" class="input-descricao" id="descricao" fill="outline" placeholder="Descricao"></ion-input>
   </div>
     
   <div class="botao-div">
-    <ion-button class="botao-form" color="success">CADASTRAR</ion-button>
+    <ion-button (click)="salvar()" class="botao-form" color="success" routerLink="/listagem-gerador">CADASTRAR</ion-button>
   </div>
 
 </ion-content>

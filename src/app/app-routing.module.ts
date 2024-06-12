@@ -59,6 +59,14 @@ const routes: Routes = [
     path: 'cadastro-gerador-energia',
     loadChildren: () => import('./cadastro-gerador-energia/cadastro-gerador-energia.module').then( m => m.CadastroGeradorEnergiaPageModule)
   },
+  {
+    path: 'cadastro-gerador-energia/:id',
+    loadChildren: () => import('./cadastro-gerador-energia/cadastro-gerador-energia.module').then( m => m.CadastroGeradorEnergiaPageModule)
+  },
+  {
+    path: 'listagem-gerador',
+    loadChildren: () => import('./listagem-gerador/listagem-gerador.module').then( m => m.ListagemGeradorPageModule)
+  },
 ];
 
 @NgModule({
