@@ -30,7 +30,12 @@
     </ion-item>
   </ion-list>
   
-  
+  <ion-alert
+    [isOpen] = "isShowDeleteDialog"
+    header= "Tem certeza da exclusão desse registro?"
+    [buttons]="alertButtons"
+  >
+  </ion-alert>
   
   <ion-fab class="botao-add-fab" slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button class="botao-add" routerLink="/cadastro-gerador-energia">

@@ -24,18 +24,20 @@ public descricao:string = '';
       this.activated_router.params
       .subscribe(
         (params:any) => {
-          this.id = params.id;
-          if (this.id != 0){
-          this.requisicao_service.get({
-            controller:'gerador-get',
-            id:this.id
-          })
-          .subscribe(
-            (_dados:any) => {
-              this.descricao  = _dados.descricao;
+          if (params.id != undefined){
+            this.id = params.id;
+            if (this.id != 0){
+              this.requisicao_service.get({
+                controller:'gerador-get',
+                id:this.id
+              })
+              .subscribe(
+                (_dados:any) => {
+                  this.descricao  = _dados.descricao;
+                }
+              );
             }
-          );
-        }
+          }
       }
     );
     
@@ -51,7 +53,7 @@ public descricao:string = '';
     this.requisicao_service.post(fd)
     .subscribe(
       () => {
-        location.href = '/listar-gerador';
+        location.href = '/listagem-gerador';
       }
     );
   }

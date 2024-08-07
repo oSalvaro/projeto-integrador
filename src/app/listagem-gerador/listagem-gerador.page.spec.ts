@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListagemGeradorPage } from './listagem-gerador.page';
 
+
 describe('ListagemGeradorPage', () => {
   let component: ListagemGeradorPage;
   let fixture: ComponentFixture<ListagemGeradorPage>;
