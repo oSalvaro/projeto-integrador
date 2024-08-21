@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequisicaoService } from 'src/app/service/requisicao.service';
 
 @Component({
   selector: 'app-etapa1',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Etapa1Page implements OnInit {
 public title:string = 'Etapa 1';
-  constructor() { }
+public texto:string = '';
+  constructor(
+    public requisicao_service:RequisicaoService
+  ) { }
 
   ngOnInit() {
+    this.requisicao_service.get({
+      controller:'traducao-get',
+      etapa:1
+    })
+    .subscribe(
+      (_res:any) => {
+        this.texto = _res;
+      }
+    );
   }
 
 }

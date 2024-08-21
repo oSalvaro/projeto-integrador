@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
+    path: 'cadastro/:id',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -66,6 +70,10 @@ const routes: Routes = [
   {
     path: 'listagem-gerador',
     loadChildren: () => import('./listagem-gerador/listagem-gerador.module').then( m => m.ListagemGeradorPageModule)
+  },
+  {
+    path: 'venda-energia',
+    loadChildren: () => import('./venda-energia/venda-energia.module').then( m => m.VendaEnergiaPageModule)
   },
 ];
 

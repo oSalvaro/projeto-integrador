@@ -14,23 +14,30 @@
 
 
     <ion-list class="usuario">
-      
-      Usuário 1
+      <ion-item *ngFor="let usuario of usuario">
+      <ion-label>Usuario: {{ usuario.nome }}</ion-label>
     
       <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true" >
-        <ion-icon class="delete" color="danger" slot="icon-only" name="trash"></ion-icon>
+        <ion-icon class="delete" color="danger" slot="icon-only" name="trash" (click)="excluir(usuario.id)"></ion-icon>
       </ion-item-option>
 
-        <ion-buttons [collapse]="true"  class="item-edit">
+        <ion-buttons [collapse]="true" class="item-edit" (click)="editar(usuario.id)">
           <ion-button>
             
             <ion-icon class="editar" slot="end" name="create"></ion-icon>
           </ion-button>
         </ion-buttons>
 
-    
+      </ion-item>
     </ion-list>
     
+    <ion-alert
+    [isOpen] = "isShowDeleteDialog"
+    header= "Tem certeza da exclusão desse registro?"
+    [buttons]="alertButtons"
+  >
+  </ion-alert>
+
     <ion-fab class="botao-add-fab" slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button class="botao-add" routerLink="/cadastro">
         <ion-icon name="add"></ion-icon>
