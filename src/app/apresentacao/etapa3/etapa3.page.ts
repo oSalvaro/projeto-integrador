@@ -9,6 +9,7 @@ import { RequisicaoService } from 'src/app/service/requisicao.service';
 export class Etapa3Page implements OnInit {
   public title:string = 'Etapa 3';
   public texto:string  = '';
+
   constructor(
     public requisicao_service:RequisicaoService
   ) { }

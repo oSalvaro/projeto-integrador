@@ -1,12 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>venda-energia</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
-  </ion-header>
+
+  
+
+      <form action="">
+
+        <div class="formulario">  
+
+          <div class="div-venda">
+            <ion-select label="Selecione o gerador para venda" label-placement="floating" fill="solid" class="select-venda">
+              <ion-select-option value=""></ion-select-option>
+              <ion-select-option value=""></ion-select-option>
+              <ion-select-option value=""></ion-select-option>
+            </ion-select>
+        </div>
+        
+          <label class="label-form" for="qntd-energia"><strong>Selecione quanta energia quer vender:</strong></label>
+          <ion-input type="number" class="input-form" id="qntd-energia" fill="outline" placeholder="0Kw" required></ion-input>
+
+          <label class="label-form" for="valor-energia"><strong>Selecione o valor minimo da enegia (por Kw):</strong></label>
+          <ion-input type="number" class="input-form" id="valor-energia" fill="outline" placeholder="0Kw" required></ion-input>
+  
+          <label class="label-form" for="descricao-venda"><strong>Descrição:</strong></label>
+          <ion-input type="password" class="input-form" id="descricao-venda" fill="outline" placeholder="Descrição da venda"></ion-input>
+        </div>
+        
+          <div class="botao-div">
+            <ion-button class="botao-form" color="light">Prosseguir</ion-button>
+          </div>
+      </form>
 </ion-content>

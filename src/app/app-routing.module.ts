@@ -75,6 +75,22 @@ const routes: Routes = [
     path: 'venda-energia',
     loadChildren: () => import('./venda-energia/venda-energia.module').then( m => m.VendaEnergiaPageModule)
   },
+  {
+    path: 'configuracoes',
+    loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
+  },
+  {
+    path: 'grafico',
+    loadChildren: () => import('./grafico/grafico.module').then( m => m.GraficoPageModule)
+  },
+  {
+    path: 'card-exemplo',
+    loadChildren: () => import('./card-exemplo/card-exemplo.module').then( m => m.CardExemploPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
 ];
 
 @NgModule({
