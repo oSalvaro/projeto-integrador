@@ -25,7 +25,7 @@
   <ion-card color="sucess">
     <ion-card-header>
       <ion-icon name="stats-chart-outline"></ion-icon>
-      <ion-card-subtitle>Itens adicionados</ion-card-subtitle>
+      <ion-card-subtitle>Quantidade de geradores cadastrados</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -33,7 +33,8 @@
     </ion-card-content>
   </ion-card>
 
-  <p-chart type="pie" [data]="data"/>
+  <h2 class="titulo-grafico">.</h2>
+  <p-chart class="grafico" type="pie" [data]="data"/>
 
   <p-chart type="bar" [data]="data2"/>
 </ion-content>

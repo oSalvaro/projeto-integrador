@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { VendaEnergiaPageRoutingModule } from './venda-energia-routing.module';
 
 import { VendaEnergiaPage } from './venda-energia.page';
+import { MenuPageModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VendaEnergiaPageRoutingModule
+    VendaEnergiaPageRoutingModule,
+    MenuPageModule
   ],
   declarations: [VendaEnergiaPage]
 })

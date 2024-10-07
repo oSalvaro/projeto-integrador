@@ -8,12 +8,15 @@ import { UsuariosPageRoutingModule } from './usuarios-routing.module';
 
 import { UsuariosPage } from './usuarios.page';
 
+import { MenuPageModule } from '../menu/menu.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UsuariosPageRoutingModule
+    UsuariosPageRoutingModule,
+    MenuPageModule
   ],
   declarations: [UsuariosPage]
 })

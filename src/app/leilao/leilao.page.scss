@@ -1,0 +1,29 @@
+ion-content{
+    --background: #004d00;
+}
+
+.tela-fundo{
+    color: white; 
+}
+
+.participantes{ 
+    float: right;
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+}
+
+.lance{
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.coluna-1{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}

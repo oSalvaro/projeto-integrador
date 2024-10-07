@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListagemGeradorPageRoutingModule } from './listagem-gerador-routing.module';
+import { ListagemVendaPageRoutingModule } from './listagem-venda-routing.module';
 
-import { ListagemGeradorPage } from './listagem-gerador.page';
-
+import { ListagemVendaPage } from './listagem-venda.page';
 import { MenuPageModule } from '../menu/menu.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListagemGeradorPageRoutingModule,
+    ListagemVendaPageRoutingModule,
     MenuPageModule
   ],
-  declarations: [ListagemGeradorPage]
+  declarations: [ListagemVendaPage]
 })
-export class ListagemGeradorPageModule {}
+export class ListagemVendaPageModule {}

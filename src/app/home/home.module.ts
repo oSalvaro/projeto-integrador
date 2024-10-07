@@ -11,12 +11,14 @@ import { Funcionalidade3Page } from './funcionalidade3/funcionalidade3.page';
 
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 
+import { MenuPageModule } from '../menu/menu.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    MenuPageModule
   ],
   declarations: [HomePage,Funcionalidade1Page,Funcionalidade2Page,Funcionalidade3Page],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

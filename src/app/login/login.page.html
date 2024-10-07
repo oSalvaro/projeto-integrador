@@ -1,15 +1,18 @@
-<ion-content [fullscreen]="true">
+ <!-- <ion-content [fullscreen]="true">
       <h2 class="titulo-login"><strong>Login</strong></h2>
 
-      <form action="">
+      <form [formGroup]="formLogin" (ngSubmit)="login()">
 
-        <div class="formulario">  
-          <label class="label-form" for="email"><strong>Email:</strong></label>
-          <ion-input class="input-form" id="email" fill="outline" placeholder="email@gmail.com"></ion-input>
-  
-          <label class="label-form" for="Senha"><strong>Senha:</strong></label>
-          <ion-input type="password" class="input-form" id="senha" fill="outline" placeholder="Senha"></ion-input>
-  
+        <div class="formulario" >
+          <ion-label class="label-form" for="email"><strong>Email</strong></ion-label>
+          <ion-icon name="mail" item-start></ion-icon>
+          <ion-input [(ngModel)]="email" name="email" class="input-form" id="email" fill="outline" placeholder="email@gmail.com"></ion-input>
+
+          <ion-label class="label-form" for="Senha"><strong>Senha</strong></ion-label>
+          <ion-icon name="key-outline" item-start></ion-icon>
+          <ion-input [(ngModel)]="senha" name="senha" type="password" class="input-form" id="senha" fill="outline" placeholder="Senha"></ion-input>
+
+        
             <a class="link-form" routerLink="/recuperar">Esqueci minha senha</a> <br>
             
             <br>
@@ -17,7 +20,7 @@
         </div>
         
           <div class="botao-div">
-            <ion-button class="botao-form" color="success">Entrar</ion-button>
+            <ion-button class="botao-form" color="success" type="submit">Entrar</ion-button>
           </div>
       </form>
-</ion-content>
+</ion-content> -->

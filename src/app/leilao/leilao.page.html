@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button class="menu-hamburguer"></ion-menu-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-menu content-id="home-content"></app-menu>
+
+<ion-content [fullscreen]="true" id="home-content">
+  <div class="tela-fundo">
+    <ion-grid>
+
+      <!-- Linha com Energia a venda -->
+      <ion-col size="12" class="coluna-1">
+        <h3 class="energia-titulo">Energia a venda:</h3>
+      </ion-col>
+
+      <!-- Energia -->
+      <ion-col size="12" style="text-align: center; margin-top: 20px;">
+        <input type="text" disabled>
+      </ion-col>
+
+      <!-- Campo de entrada de lance -->
+      <ion-col size="12" style="margin-top: 20px; text-align: center;">
+        <p>Lance</p>
+        <ion-input class="lance" placeholder="R$ 999" type="number" style="background-color: white; color: black; padding: 5px; border-radius: 5px;"></ion-input>
+      </ion-col>
+
+      <!-- Lances automáticos -->
+      <ion-col size="12" style="margin-top: 20px; text-align: center;">
+        <h4>Lances automáticos:</h4>
+      </ion-col>
+
+      <!-- Botões de lances automáticos -->
+      <ion-col size="12" style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <ion-button color="success" style="width: 48%;">R$ 999</ion-button>
+        <ion-button color="success" style="width: 48%;">R$ 999</ion-button>
+      </ion-col>
+
+      <ion-col size="12" style="display: flex; justify-content: space-between; margin-top: 10px;">
+        <ion-button color="success" style="width: 48%;">R$ 999</ion-button>
+        <ion-button color="success" style="width: 48%;">R$ 999</ion-button>
+      </ion-col>
+
+    </ion-grid>
+  </div>
+</ion-content>

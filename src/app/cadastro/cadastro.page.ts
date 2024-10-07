@@ -45,6 +45,7 @@ export class CadastroPage implements OnInit {
   }
 
   salvar(){
+ 
     const fd = new FormData();
     fd.append('controller','usuario');
     fd.append('op','salvar');

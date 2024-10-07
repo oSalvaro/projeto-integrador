@@ -1,0 +1,19 @@
+
+
+  <ion-menu [contentId]="content_id">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item (click)="go('/home')">Início</ion-item>
+        <ion-item (click)="go('/venda-energia')">Venda</ion-item>
+        <ion-item (click)="go('/compra')">Compra</ion-item>
+        <ion-item (click)="go('/listagem-gerador')">Listagem de geradores</ion-item>
+        <ion-item (click)="go('/configuracoes')">Configurações</ion-item>
+        <ion-button class="logoff" color="danger" expand="full">Sair</ion-button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>

@@ -1,7 +1,14 @@
-<ion-content [fullscreen]="true">
+<ion-header [translucent]="true">
+  <ion-toolbar>
 
-  
+        <ion-buttons slot="start">
+            <ion-menu-button class="menu-hamburguer"></ion-menu-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<app-menu content-id="home-content"></app-menu>
+<ion-content [fullscreen]="true" id="home-content">
       <form action="">
 
         <div class="formulario">  
