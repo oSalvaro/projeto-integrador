@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequisicaoService } from '../service/requisicao.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { LocalstorageService } from '../service/localstorage.service';
 
 @Component({
   selector: 'app-listagem-gerador',
@@ -15,7 +16,8 @@ import { LoadingController } from '@ionic/angular';
   constructor(
     public requisicao_service:RequisicaoService,
     public router:Router,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private ls:LocalstorageService
   ) { }
     
   public gerador:Array<any> = [];
@@ -23,6 +25,10 @@ import { LoadingController } from '@ionic/angular';
     this.listar ();
   }
 
+  go(rota:string){
+    window.location.href = rota;
+  }
+  
   async listar(){
 
     const loading = await this.loadingCtrl.create({
@@ -31,7 +37,8 @@ import { LoadingController } from '@ionic/angular';
     loading.present();
 
     this.requisicao_service.get({
-      controller:'gerador-listar'
+      controller:'gerador-listar',
+      user_id:this.ls.get('user_id')
     })
     .subscribe(
       (_res:any) => {

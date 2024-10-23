@@ -10,6 +10,8 @@ import { CompraPage } from './compra.page';
 
 import { MenuPageModule } from '../menu/menu.module';
 
+
+
 @NgModule({
   imports: [
     CommonModule,

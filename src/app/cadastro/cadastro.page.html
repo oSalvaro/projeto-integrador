@@ -7,19 +7,25 @@
         <label class="label-form" for="nome"><strong>Nome:</strong></label>
         <ion-input [(ngModel)]="nome" name="nome" class="input-form" id="nome:" fill="outline" placeholder="Nome" required></ion-input>
 
+        <ion-icon name="mail" item-start></ion-icon>
         <label class="label-form" for="email"><strong>Email:</strong></label>
         <ion-input [(ngModel)]="email" name="email" class="input-form" id="email:" fill="outline" placeholder="email@gmail.com" required></ion-input>
 
+        <ion-icon name="key-outline" item-start></ion-icon>
         <label class="label-form" for="Senha"><strong>Senha:</strong></label>
         <ion-input [(ngModel)]="senha" name="senha" type="password" class="input-form" id="senha:" fill="outline" placeholder="Senha" required></ion-input>
 
+        <ion-icon name="key-outline" item-start></ion-icon>
         <label class="label-form" fill="outline" for="confirmar-senha"><strong>Confirmar senha:</strong></label>
         <ion-input [(ngModel)]="senha" type="password" class="input-form" id="senha2" fill="outline" placeholder="Confirmar senha"></ion-input>
 
+        <br>
+
+        <a class="link-form" (click)="go('/login')">Já possuí uma conta? Logar</a>
       </div>
 
         <div class="botao-div">
-          <ion-button (click)="salvar()" class="botao-form" color="success" routerLink="/usuarios">Cadastrar</ion-button>
+          <ion-button (click)="salvar()" class="botao-form" color="success" (click)="go('/usuarios')">Cadastrar</ion-button>
         </div>
     </form>
 </ion-content>

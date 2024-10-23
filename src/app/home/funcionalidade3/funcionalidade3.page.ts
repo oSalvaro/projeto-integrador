@@ -12,4 +12,8 @@ export class Funcionalidade3Page implements OnInit {
   ngOnInit() {
   }
 
+  go(rota:string){
+    window.location.href = rota;
+  }
+
 }

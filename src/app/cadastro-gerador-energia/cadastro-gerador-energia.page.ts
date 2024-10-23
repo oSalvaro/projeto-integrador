@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequisicaoService } from '../service/requisicao.service';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { LocalstorageService } from '../service/localstorage.service';
 
 @Component({
   selector: 'app-cadastro-gerador-energia',
@@ -15,10 +16,12 @@ public id:number = 0;
 public nome:string = '';
 public descricao:string = '';
 
+
   constructor(
     public requisicao_service:RequisicaoService,
     private loadingController: LoadingController,
-    private activated_router:ActivatedRoute
+    private activated_router:ActivatedRoute,
+    private ls:LocalstorageService
   ) {
     
       this.activated_router.params
@@ -33,7 +36,7 @@ public descricao:string = '';
               })
               .subscribe(
                 (_dados:any) => {
-                  this.descricao  = _dados.descricao;
+                  this.descricao = _dados.descricao;
                 }
               );
             }
@@ -47,6 +50,7 @@ public descricao:string = '';
     const fd = new FormData();
     fd.append('controller','gerador');
     fd.append('op','salvar');
+    fd.append('user_id',this.ls.get('user_id'));
     fd.append('id',String(this.id));
     fd.append('descricao',this.descricao);
 
@@ -59,6 +63,10 @@ public descricao:string = '';
   }
 
   ngOnInit() {
+  }
+
+  go(rota:string){
+    window.location.href = rota;
   }
 
 }

@@ -15,16 +15,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <!--<ion-list class="venda">
+  <ion-list class="venda">
      
     <ion-item *ngFor="let venda of venda">
-      <ion-label>{{  }}</ion-label>
+      <ion-label>{{ venda.descricao }}</ion-label>
   
-    <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true" >
-      <ion-icon class="delete" color="danger" slot="icon-only" name="trash" (click)="excluir(gerador.id)"></ion-icon>
+    <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true">
+      <!-- <ion-icon class="delete" color="danger" slot="icon-only" name="trash" (click)="cancelar(venda.id)"></ion-icon> -->
     </ion-item-option>
 
-      <ion-buttons [collapse]="true"  class="item-edit" (click)="editar(gerador.id)"> 
+      <ion-buttons [collapse]="true" class="item-edit" (click)="editar(venda.id)"> 
         <ion-button>
           
           <ion-icon class="editar" slot="end" name="create"></ion-icon>
@@ -39,5 +39,5 @@
     [buttons]="alertButtons"
   >
   </ion-alert>
--->
+
 </ion-content>

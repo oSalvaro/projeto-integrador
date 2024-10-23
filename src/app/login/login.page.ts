@@ -3,6 +3,7 @@ import { RequisicaoService } from '../service/requisicao.service';
 import { LoadingController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LocalstorageService } from '../service/localstorage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
   })
  export class LoginPage implements OnInit {
+  public formLogin: FormGroup;
+
   public id:number = 0;
   public email:string = '';
   public senha:string = '';
+
+
 
   
 
@@ -21,11 +26,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     private loadingController: LoadingController,
     private activated_router:ActivatedRoute,
 
-    //private formBuilder: FormBuilder,
-    //public formLogin: FormGroup
+    private formBuilder: FormBuilder,
+    public ls:LocalstorageService
 
   )
    {
+    this.formLogin = this.formBuilder.group({
+			'email': [null, Validators.compose([Validators.required,Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')])],
+			'senha': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
+		});
+  
     this.activated_router.params
       .subscribe(
         (params:any) => {
@@ -45,9 +55,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
             }
           }
       }
-    );
-
-    //this.formLogin = this.formBuilder
+    )
    }
   
  
@@ -63,12 +71,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
     this.requisicao_service.post(fd)
     .subscribe(
-      () => {
+      (_res:any) => {
+        this.ls.set('is_autenticado',true);
+        this.ls.set('user_id',_res.user_id);
         location.href = '/home';
       }
     );
   }
 
   ngOnInit() {
+
+    if (this.ls.get('is_autenticado') == true){
+      location.href = '/home';
+    }
   }
+
+  go(rota:string){
+    window.location.href = rota;
+  }
+
+  
 }

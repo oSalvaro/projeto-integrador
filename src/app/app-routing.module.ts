@@ -76,6 +76,10 @@ const routes: Routes = [
     loadChildren: () => import('./venda-energia/venda-energia.module').then( m => m.VendaEnergiaPageModule)
   },
   {
+    path: 'venda-energia/:id',
+    loadChildren: () => import('./venda-energia/venda-energia.module').then( m => m.VendaEnergiaPageModule)
+  },
+  {
     path: 'configuracoes',
     loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
   },

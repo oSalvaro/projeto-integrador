@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-        <h2 class="usuario" >Nome usuário</h2>
+        <h2 class="usuario" *ngFor="let usuario of nome"> {{ usuario.nome }} </h2>
 
         <ion-buttons slot="start">
             <ion-menu-button class="menu-hamburguer"></ion-menu-button>

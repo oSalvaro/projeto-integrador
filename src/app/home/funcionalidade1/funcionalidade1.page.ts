@@ -13,4 +13,8 @@ export class Funcionalidade1Page implements OnInit {
   ngOnInit() {
   }
 
+  go(rota:string){
+    window.location.href = rota;
+  }
+
 }

@@ -1,5 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
         <ion-buttons slot="start">
             <ion-menu-button class="menu-hamburguer"></ion-menu-button>
         </ion-buttons>
@@ -10,7 +11,50 @@
 <ion-content [fullscreen]="true" id="home-content">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">compra</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list class="venda">
+     
+     
+
+    <table class="table table-hover table-sm">
+      <thead>
+          <tr>
+              <th class="titulo-tabela">Gerador</th>
+              <th  class="titulo-tabela">Valor por Kw</th>
+              <th  class="titulo-tabela">Quantidade de energia</th>
+              <th  class="titulo-tabela">Descricao</th>
+          </tr>
+      </thead>
+      <tbody>
+          
+              <tr>
+                  <td >
+                    <ion-item *ngFor="let v of venda">
+                      <ion-label>{{ v.gerador_id }} </ion-label></ion-item> 
+                  </td>
+                  <td>
+                    <ion-item *ngFor="let v of venda">
+                      <ion-label> {{ v.vl_venda }} </ion-label></ion-item> 
+                  </td>
+                  <td>
+                    <ion-item *ngFor="let v of venda">
+                      <ion-label>{{ v.qt_energia }}</ion-label></ion-item> 
+                  </td>
+                  <td>
+                    <ion-item *ngFor="let v of venda">
+                    <ion-label>{{ v.descricao }}</ion-label></ion-item> 
+                </td>
+                  <td>
+                      <ion-icon class="botao-compra" name="cart-outline" (click)="comprar()"></ion-icon>
+                  </td>
+              </tr>
+      </tbody>
+  </table>
+  </ion-list> 
+
+  
+
 </ion-content>
