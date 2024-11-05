@@ -1,40 +1,42 @@
-  <ion-content [fullscreen]="true">
-      <h2 class="titulo-login"><strong>Login</strong></h2>
+<ion-content [fullscreen]="true" class="login-content" >
+  <h2 class="titulo-login" ><strong>Login</strong></h2>
+    <div class="login-container">
+  <form [formGroup]="formLogin" (ngSubmit)="autenticar()" class="login-form">
 
-      <form [formGroup]="formLogin" (ngSubmit)="autenticar()">
+    
+    <div class="formulario" >
+      <ion-item class="text-white" >
+         <ion-label position="floating" class="label-form" for="email">
+          <ion-icon name="mail" item-start></ion-icon>
+          E-mail
+        </ion-label>
+        <ion-input type="email" formControlName="email" [(ngModel)]="email" name="email" class="input-form2" id="email" fill="outline" placeholder="email@gmail.com" aria-label="email"></ion-input>
+      </ion-item>
+      <div *ngIf="'formLogin.controls.email.errors'" class="px-3 text-danger">
+        <p *ngIf="'formLogin.controls.email.errors.required'"><small></small></p>
+        <p *ngIf="'formLogin.controls.email.errors.pattern'"><small></small></p>
+      </div>
 
-        <div class="formulario">
-          <ion-item class="text-white">
-             <ion-label position="floating" class="label-form" for="email"> 
-              <ion-icon name="mail" item-start></ion-icon>
-              E-mail
-            </ion-label>
-            <ion-input type="email" formControlName="email" [(ngModel)]="email" name="email" class="input-form2" id="email" fill="outline" placeholder="email@gmail.com" aria-label="email"></ion-input>
-          </ion-item>
-          <div *ngIf="'formLogin.controls.email.errors'" class="px-3 text-danger">
-            <p *ngIf="'formLogin.controls.email.errors.required'"><small></small></p>
-            <p *ngIf="'formLogin.controls.email.errors.pattern'"><small></small></p>
-          </div> 
+      <br>
+     
+      <ion-item class="text-white">
+        <ion-label position="floating" class="label-form" for="Senha">
+          <ion-icon name="key-outline" item-start></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password" formControlName="senha" [(ngModel)]="senha" name="senha" class="input-form2" id="senha" fill="outline" placeholder="Senha" aria-label="senha"></ion-input>
+      </ion-item>
+      <div *ngIf="'formLogin.controls.email.errors'" class="px-3 text-danger">
+        <p *ngIf="'formLogin.controls.password.errors.required'"><small></small></p>
+      </div>
 
-          <br>
-          
-          <ion-item class="text-white">
-            <ion-label position="floating" class="label-form" for="Senha">
-              <ion-icon name="key-outline" item-start></ion-icon>
-              Senha
-            </ion-label>
-            <ion-input type="password" formControlName="senha" [(ngModel)]="senha" name="senha" class="input-form2" id="senha" fill="outline" placeholder="Senha" aria-label="senha"></ion-input>
-          </ion-item>
-          <div *ngIf="'formLogin.controls.email.errors'" class="px-3 text-danger">
-            <p *ngIf="'formLogin.controls.password.errors.required'"><small></small></p>
-          </div>
-  
-            <br>
-            <a class="link-form" (click)="go('/cadastro')">Não tem uma conta? Cadastrar</a>
-        </div>
-        
-          <div class="botao-div">
-            <ion-button class="botao-form" color="success" type="submit" type="submit" [disabled]="!formLogin.valid">Entrar</ion-button>
-          </div>
-      </form> 
-</ion-content> 
+        <br>
+        <a class="link-form" (click)="go('/cadastro')">Não tem uma conta? Cadastrar</a>
+    </div>
+   
+      <div class="botao-div">
+        <ion-button class="botao-form" color="success" type="submit" type="submit" [disabled]="!formLogin.valid">Entrar</ion-button>
+      </div>
+  </form>
+</div>
+</ion-content>

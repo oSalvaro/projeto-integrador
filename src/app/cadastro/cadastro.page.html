@@ -1,31 +1,47 @@
-<ion-content [fullscreen]="true">
-  
-    <h2 class="titulo-cadastro"> <strong>{{ title }}</strong></h2>
+<ion-content [fullscreen]="true" class="cadastro-content">
+  <div class="cadastro-container">
+    <h2 class="titulo-cadastro"><strong>Cadastro</strong></h2>
 
-    <form type="submit">
-      <div class="formulario">
-        <label class="label-form" for="nome"><strong>Nome:</strong></label>
-        <ion-input [(ngModel)]="nome" name="nome" class="input-form" id="nome:" fill="outline" placeholder="Nome" required></ion-input>
+    <form (ngSubmit)="salvar()" class="cadastro-form">
+      <ion-item class="form-item">
+        <ion-label position="floating" class="label-form" for="nome">
+          <ion-icon name="person-outline" slot="start" class="icon"></ion-icon>
+          Nome
+        </ion-label>
+        <ion-input [(ngModel)]="nome" name="nome" class="input-form" name="nome" id="nome" placeholder="Nome completo" required></ion-input>
+      </ion-item>
 
-        <ion-icon name="mail" item-start></ion-icon>
-        <label class="label-form" for="email"><strong>Email:</strong></label>
-        <ion-input [(ngModel)]="email" name="email" class="input-form" id="email:" fill="outline" placeholder="email@gmail.com" required></ion-input>
+      <ion-item class="form-item">
+        <ion-label position="floating" class="label-form" for="email">
+          <ion-icon name="mail-outline" slot="start" class="icon"></ion-icon>
+          E-mail
+        </ion-label>
+        <ion-input [(ngModel)]="email" type="email" name="email" id="email" class="input-form" placeholder="email@gmail.com" required></ion-input>
+      </ion-item>
 
-        <ion-icon name="key-outline" item-start></ion-icon>
-        <label class="label-form" for="Senha"><strong>Senha:</strong></label>
-        <ion-input [(ngModel)]="senha" name="senha" type="password" class="input-form" id="senha:" fill="outline" placeholder="Senha" required></ion-input>
+      <ion-item class="form-item">
+        <ion-label position="floating" class="label-form" for="senha">
+          <ion-icon name="key-outline" slot="start" class="icon"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input [(ngModel)]="senha" type="password" name="senha" id="senha" class="input-form" placeholder="Senha" required></ion-input>
+      </ion-item>
 
-        <ion-icon name="key-outline" item-start></ion-icon>
-        <label class="label-form" fill="outline" for="confirmar-senha"><strong>Confirmar senha:</strong></label>
-        <ion-input [(ngModel)]="senha" type="password" class="input-form" id="senha2" fill="outline" placeholder="Confirmar senha"></ion-input>
+      <ion-item class="form-item">
+        <ion-label position="floating" class="label-form" for="confirmar-senha">
+          <ion-icon name="key-outline" slot="start" class="icon"></ion-icon>
+          Confirmar Senha
+        </ion-label>
+        <ion-input [(ngModel)]="senha" id="senha2" type="password" class="input-form" placeholder="Confirmar senha" required></ion-input>
+      </ion-item>
 
-        <br>
-
-        <a class="link-form" (click)="go('/login')">Já possuí uma conta? Logar</a>
+      <div class="botao-div">
+        <ion-button color="success" type="submit" class="botao-form">Cadastrar</ion-button>
       </div>
 
-        <div class="botao-div">
-          <ion-button (click)="salvar()" class="botao-form" color="success" (click)="go('/usuarios')">Cadastrar</ion-button>
-        </div>
+      <div class="link-div">
+        <a class="link-form" (click)="go('/login')">Já possui uma conta? Logar</a>
+      </div>
     </form>
+  </div>
 </ion-content>

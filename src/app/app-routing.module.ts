@@ -111,6 +111,14 @@ const routes: Routes = [
     path: 'compra',
     loadChildren: () => import('./compra/compra.module').then( m => m.CompraPageModule)
   },
+  {
+    path: 'comprar-energia',
+    loadChildren: () => import('./comprar-energia/comprar-energia.module').then( m => m.ComprarEnergiaPageModule)
+  },
+  {
+    path: 'compra-fim',
+    loadChildren: () => import('./compra-fim/compra-fim.module').then( m => m.CompraFimPageModule)
+  },
 ];
 
 @NgModule({

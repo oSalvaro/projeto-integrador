@@ -4,15 +4,22 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { LocalstorageService } from '../service/localstorage.service';
 
+
 @Component({
   selector: 'app-listagem-venda',
   templateUrl: './listagem-venda.page.html',
   styleUrls: ['./listagem-venda.page.scss'],
 })
 export class ListagemVendaPage implements OnInit {
-  public title:string = 'Listagem venda';
+  public title:string = 'Listagem de vendas';
   public isShowDeleteDialog:boolean = false; 
   public alertButtons:Array<any> = [];
+
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 
   constructor(
     public requisicao_service:RequisicaoService,

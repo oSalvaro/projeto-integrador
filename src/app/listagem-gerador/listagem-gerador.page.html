@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="success">
         <ion-buttons slot="start">
             <ion-menu-button class="menu-hamburguer"></ion-menu-button>
         </ion-buttons>
+    <ion-title color="dark">{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,9 +20,7 @@
     <ion-item *ngFor="let gerador of gerador">
       <ion-label>{{ gerador.descricao }}</ion-label>
   
-    <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true" >
-      <ion-icon class="delete" color="danger" slot="icon-only" name="trash" (click)="excluir(gerador.id)"></ion-icon>
-    </ion-item-option>
+    
 
       <ion-buttons [collapse]="true"  class="item-edit" (click)="editar(gerador.id)"> 
         <ion-button>
@@ -29,6 +28,10 @@
           <ion-icon class="editar" slot="end" name="create"></ion-icon>
         </ion-button>
       </ion-buttons>
+
+      <ion-item-option class="item-delete" color="(236, 223, 223)" expandable="true" >
+        <ion-icon class="delete" color="danger" slot="icon-only" name="trash" (click)="excluir(gerador.id)"></ion-icon>
+      </ion-item-option>
     </ion-item>
   </ion-list>
   

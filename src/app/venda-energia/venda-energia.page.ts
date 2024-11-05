@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VendaEnergiaPage implements OnInit {
   public id:number    = 0;
+  public title:string = 'Venda sua energia';
   public qt_energia:number = 0;
   public vl_energia:number = 0;
   public descricao:string  = '';
@@ -70,9 +71,7 @@ export class VendaEnergiaPage implements OnInit {
     this.requisicao_service.post(fd)
     .subscribe(
       (_res:any) => {
-        //this.ls.set('em_andamento',true);
-        //this.ls.set('status',_res.status);
-       //location.href = '/listagem-venda';
+       location.href = '/listagem-venda';
       }
     );
    }

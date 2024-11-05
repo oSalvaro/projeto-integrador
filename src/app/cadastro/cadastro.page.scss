@@ -1,20 +1,86 @@
-ion-content{
-    --background: #92C74F;
+/* Container principal */
+.cadastro-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
 }
 
-.titulo-cadastro{
+.cadastro-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.titulo-cadastro {
     text-align: center;
-    margin-bottom: 10%;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
-    
-    
-    .botao-div{
-        text-align: center;
-        margin-top:7%;
-    }
 
-        .botao-form{
-            width: 50%;
-            font-size:  1.5em;
-            --ion-color-success:#046D22;
-        }
+/* Estilo dos inputs */
+.form-item {
+    --background: transparent;
+    --border-radius: 8px;
+    --inner-padding-start: 0.75rem;
+}
+
+.input-form {
+    --placeholder-color: #888;
+    color: #333;
+}
+
+.label-form {
+    color: #4CAF50;
+}
+
+/* Ícones */
+.icon {
+    color: #4CAF50;
+}
+
+/* Link de login */
+.link-form {
+    display: block;
+    text-align: center;
+    color: #4CAF50;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Botão de cadastro */
+.botao-div {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.botao-form {
+    --background: #4CAF50;
+    --border-radius: 8px;
+    --padding-start: 1.5rem;
+    --padding-end: 1.5rem;
+}
+
+.botao-form:disabled {
+    opacity: 0.6;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

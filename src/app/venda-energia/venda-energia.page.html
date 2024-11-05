@@ -1,36 +1,54 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-
-        <ion-buttons slot="start">
-            <ion-menu-button class="menu-hamburguer"></ion-menu-button>
-        </ion-buttons>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-hamburguer"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <app-menu content-id="home-content"></app-menu>
-<ion-content [fullscreen]="true" id="home-content">
-      <form submit="">
 
-        <div class="formulario">  
+<ion-content [fullscreen]="true" id="home-content" class="venda-content">
+  <div class="venda-container">
 
-          <div class="div-venda">
-            <ion-select (ionChange)="handleChange($event)" label="Selecione o gerador para venda" label-placement="floating" fill="solid" class="select-venda" >
-              <ion-select-option *ngFor="let g of gerador" [value]="g.id">{{ g.descricao }} </ion-select-option>
-            </ion-select>
-        </div>
+    <form (ngSubmit)="salvar()" class="venda-form">
+      <div class="formulario">
         
-          <label class="label-form" for="qntd-energia"><strong>Selecione quanta energia quer vender:</strong></label>
-          <ion-input type="number" [(ngModel)]="qt_energia" name="qt_energia" class="input-form" id="qt_energia" fill="outline" placeholder="0Kw" required></ion-input>
+        <!-- Select Gerador -->
+        <ion-item class="form-item">
+          <ion-select 
+            (ionChange)="handleChange($event)" class="select-venda"  label="Selecione o gerador para venda" label-placement="floating" placeholder="Escolha o gerador" required>
+            <ion-select-option id="gerador" *ngFor="let g of gerador" [value]="g.id">{{ g.descricao }}</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-          <label class="label-form" for="valor-energia"><strong>Selecione o valor minimo da enegia (por Kw):</strong></label>
-          <ion-input type="number" [(ngModel)]="vl_energia" name="vl_energia" class="input-form" id="vl_energia" fill="outline" placeholder="0Kw" required></ion-input>
-  
-          <label class="label-form" for="descricao-venda"><strong>Descrição:</strong></label>
-          <ion-input type="text" [(ngModel)]="descricao" name="descricao" class="input-form" id="descricao" fill="outline" placeholder="Descrição da venda"></ion-input>
-        </div>
-        
-          <div class="botao-div">
-            <ion-button class="botao-form" color="light" (click)="salvar()">Prosseguir</ion-button>
-          </div>
-      </form>
+        <!-- Quantidade de Energia -->
+        <ion-item class="form-item">
+          <ion-label position="floating" class="label-form">Quantidade de Energia (kWh)</ion-label>
+          <ion-input id="qt_energia" type="number" [(ngModel)]="qt_energia" name="qt_energia" placeholder="0 kWh" required class="input-form"></ion-input>
+        </ion-item>
+
+        <!-- Valor da Energia -->
+        <ion-item class="form-item">
+          <ion-label position="floating" class="label-form" for="vl_energia">Valor mínimo (R$ por kWh)</ion-label>
+          <ion-input id="vl_energia" type="number" [(ngModel)]="vl_energia" name="vl_energia" placeholder="0" required class="input-form">
+          </ion-input>
+        </ion-item>
+
+        <!-- Descrição -->
+        <ion-item class="form-item">
+          <ion-label position="floating" class="label-form">Descrição</ion-label>
+          <ion-input type="text" id="descricao" [(ngModel)]="descricao" name="descricao" placeholder="Descrição da venda" class="input-form">
+          </ion-input>
+        </ion-item>
+
+      </div>
+
+      <!-- Botão de Prosseguir -->
+      <div class="botao-div">
+        <ion-button type="submit" class="botao-form" color="success">Prosseguir</ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>

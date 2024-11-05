@@ -1,60 +1,65 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-
-        <ion-buttons slot="start">
-            <ion-menu-button class="menu-hamburguer"></ion-menu-button>
-        </ion-buttons>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-hamburguer"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">{{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <app-menu content-id="home-content"></app-menu>
-<ion-content [fullscreen]="true" id="home-content">
+
+<ion-content [fullscreen]="true" id="home-content" class="green-theme">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large"></ion-title>
-    </ion-toolbar>
+    <ion-toolbar></ion-toolbar>
   </ion-header>
 
   <ion-list class="venda">
-     
-     
-
-    <table class="table table-hover table-sm">
-      <thead>
+    <!-- Visualização para pc  -->
+    <div class="table-wrapper desktop-view">
+      <table class="table table-hover table-sm">
+        <thead>
           <tr>
-              <th class="titulo-tabela">Gerador</th>
-              <th  class="titulo-tabela">Valor por Kw</th>
-              <th  class="titulo-tabela">Quantidade de energia</th>
-              <th  class="titulo-tabela">Descricao</th>
+            <th class="titulo-tabela">Gerador</th>
+            <th class="titulo-tabela">Valor por kW</th>
+            <th class="titulo-tabela">Quantidade de Energia</th>
+            <th class="titulo-tabela">Descrição</th>
           </tr>
-      </thead>
-      <tbody>
-          
-              <tr>
-                  <td >
-                    <ion-item *ngFor="let v of venda">
-                      <ion-label>{{ v.gerador_id }} </ion-label></ion-item> 
-                  </td>
-                  <td>
-                    <ion-item *ngFor="let v of venda">
-                      <ion-label> {{ v.vl_venda }} </ion-label></ion-item> 
-                  </td>
-                  <td>
-                    <ion-item *ngFor="let v of venda">
-                      <ion-label>{{ v.qt_energia }}</ion-label></ion-item> 
-                  </td>
-                  <td>
-                    <ion-item *ngFor="let v of venda">
-                    <ion-label>{{ v.descricao }}</ion-label></ion-item> 
-                </td>
-                  <td>
-                      <ion-icon class="botao-compra" name="cart-outline" (click)="comprar()"></ion-icon>
-                  </td>
-              </tr>
-      </tbody>
-  </table>
-  </ion-list> 
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of venda">
+            <td>{{ v.gerador_id }}</td>
+            <td>R$ {{ v.vl_venda }}</td>
+            <td>{{ v.qt_energia }}kWh</td>
+            <td>{{ v.descricao }}</td>
+            <td>
+                <ion-icon class="botao-compra" name="cart-outline" (click)="comprar(v.id)" slot="end"></ion-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  
+    <!-- Visualização para celular -->
+    <div class="mobile-view" *ngFor="let v of venda">
+      <ion-card>
+        <ion-card-content>
+          <p><strong>Gerador:</strong> {{ v.gerador_id }}</p>
+          <p><strong>Valor por kW:</strong> R$ {{ v.vl_venda }}</p>
+          <p><strong>Quantidade de Energia:</strong> {{ v.qt_energia }}kWh</p>
+          <p><strong>Descrição:</strong> {{ v.descricao }}</p>
+          <ion-item>
+            <ion-icon class="botao-compra" name="cart-outline" (click)="comprar(v.id)" slot="end" color="dark"></ion-icon></ion-item>
+          </ion-card-content>
+      </ion-card>
+    </div>
 
+    <ion-alert
+      [isOpen]="isShowDeleteDialog"
+      header="Tem certeza que deseja cancelar a venda?"
+      [buttons]="alertButtons">
+    </ion-alert>
+  </ion-list>
 </ion-content>
+
+

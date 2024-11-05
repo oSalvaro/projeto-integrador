@@ -1,20 +1,102 @@
-ion-content{
-    --background: #92C74F;
+/* Container principal */
+.venda-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+  padding: 1rem;
+}
+
+.venda-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.titulo-venda {
+  text-align: center;
+  color: #4CAF50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Campos do formulário */
+.form-item {
+  --background: transparent;
+  --border-radius: 8px;
+  --inner-padding-start: 0.75rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 
-.div-venda{
-    margin-top: 10%;
-    margin-bottom: 5%;
+.select-venda {
+  --placeholder-color: #888;
 }
 
-.botao-div{
-    text-align: center;
-    margin-top:7%;
- 
+.label-form {
+  color: #000000;
 }
 
-.input-form{
-    margin-top: 5%;
-    margin-bottom: 10%;
+/* Botão de prosseguir */
+.botao-div {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.botao-form {
+  --background: #4CAF50;
+  --border-radius: 8px;
+  --padding-start: 1.5rem;
+  --padding-end: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.botao-form:disabled {
+  opacity: 0.6;
+}
+
+
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .venda-container {
+    padding: 1.5rem;
+  }
+
+  .titulo-venda {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .venda-container {
+    padding: 1rem;
+  }
+
+  .titulo-venda {
+    font-size: 1.2rem;
+  }
+
+  .botao-form {
+    width: 100%;
+  }
 }

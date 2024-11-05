@@ -1,31 +1,70 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-        <h2 class="usuario" *ngFor="let usuario of nome"> {{ usuario.nome }} </h2>
-
-        <ion-buttons slot="start">
-            <ion-menu-button class="menu-hamburguer"></ion-menu-button>
-        </ion-buttons>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menu-hamburguer" slot="start"></ion-menu-button>
+    </ion-buttons>
+    <h5 class="usuario" *ngFor="let usuario of nome" slot="start"> {{ usuario.nome }} </h5>
   </ion-toolbar>
 </ion-header>
 
 <app-menu content-id="home-content"></app-menu>
 <ion-content [fullscreen]="true" id="home-content">
   <div class="titulo-home">
-    <h3><strong>BEM-VINDO(A)</strong></h3>        
+    <h3><strong>BEM-VINDO(A)</strong></h3>
   </div>
 
   <div class="atualizacoes">
     <h3><strong>Atualizações: </strong></h3>
+    <!-- Novo conteúdo para quando não houver atualizações -->
+    <div class="atualizacoes-vazio">
+      <ion-icon name="information-circle-outline" size="large"></ion-icon>
+      <p>Nenhuma atualização disponível no momento.</p>
+    </div>
   </div>
 
-  <div class="funcionalidades">
-    <h2><strong>Funcionalidades: </strong></h2>
-
-    <swiper-container>
-      <swiper-slide><app-funcionalidade1></app-funcionalidade1></swiper-slide>
-      <swiper-slide><app-funcionalidade2></app-funcionalidade2></swiper-slide>
-      <swiper-slide><app-funcionalidade3></app-funcionalidade3></swiper-slide>
-    </swiper-container>
-
+  <div>
+    <h2 class="funcionalidades-titulo"><strong>Funcionalidades: </strong></h2>
+    <ion-grid>
+      <!-- Cards das funcionalidades -->
+      <ion-row>
+        <ion-col size="6">
+          <ion-card class="funcionalidade-card" color="success">
+            <ion-card-content class="card-content" (click)="go('/listagem-gerador')">
+              <ion-icon size="large" name="flash-outline"></ion-icon>
+              <h3>Geradores</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="6">
+          <ion-card class="funcionalidade-card" color="success">
+            <ion-card-content class="card-content" (click)="go('/compra')">
+              <ion-icon name="cart-outline" size="large"></ion-icon>
+              <h3>Comprar</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="6">
+          <ion-card class="funcionalidade-card" color="success">
+            <ion-card-content class="card-content" (click)="go('/venda-energia')">
+              <ion-icon name="cash-outline" size="large"></ion-icon>
+              <h3>Vender</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="6">
+          <ion-card class="funcionalidade-card" color="success">
+            <ion-card-content class="card-content" (click)="go('/listagem-venda')">
+              <ion-icon name="bag-check-outline" size="large"></ion-icon>
+              <h3>Suas vendas</h3>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

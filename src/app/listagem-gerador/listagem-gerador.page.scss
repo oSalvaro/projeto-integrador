@@ -1,37 +1,41 @@
-.cabecalho{
-    --background: #92C74F;
-    --color: white;
-}
-
-.gerador{
-    margin: 5% 0 1% 0;
-    padding: 3% 2% 3% 2%;
-    box-shadow: 1px 1px 1px 0 rgba(173, 173, 173, 0.77);
-}
-
-    
-    .item-delete{
-        float: right;
-        border-radius: 5px;
-    }
-
-    .item-edit{
-        float: right;
-        margin-right: 1%;
-        border-radius: 5px;
-    }
-
-
-    .delete{
-        float: right;
-        padding-right: 5%;
-    }
-
-.botao-add-fab{
+.green-theme {
+    background-color: #f0f8f0; /* Light green background */
+    color: #2e5d2e; /* Dark green text */
+  }
+  
+  .gerador {
+    margin: 16px 0;
+  }
+  
+  .ion-item {
+    background-color: #e8f5e9; /* Light green for item background */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 8px; /* Space between items */
+  }
+  
+  .item-edit {
+    margin-left: auto; /* Align to the right */
+  }
+  
+  .ion-item:hover .item-delete {
+    display: flex; /* Show on hover */
+  }
+  
+  .botao-add-fab{
     margin: 0 2% 1% 0;
-}
-
-.botao-add{
+  }
+  
+  .botao-add{
     --background: #5aac31;
     --background-activated: #429b15;
-}
+  }
+  
+  .delete {
+        float: right;
+        padding-right: 5%;
+  }
+  
+  .editar {
+    color: #4caf50; /* Green for edit icon */
+  }
+  

@@ -23,6 +23,9 @@ public alertButtons:Array<any> = [];
     this.listar ();                
   }
 
+  go(rota:string){
+    window.location.href = rota;
+  }
   async listar(){
 
     const loading = await this.loadingCtrl.create({

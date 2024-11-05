@@ -12,6 +12,16 @@ export class HomePage {
 public title:string = 'Home';
 public nome:Array<any> = [];
 
+
+slideOpts = {
+  initialSlide: 0,  // Slide inicial
+  speed: 400,       // Velocidade da transição
+  loop: true,       // Loop contínuo
+  spaceBetween: 10, // Espaçamento entre os slides
+  slidesPerView: 1  // Quantidade de slides visíveis
+};
+
+
   constructor(
     public ls:LocalstorageService,
     public router:Router,
@@ -38,6 +48,10 @@ public nome:Array<any> = [];
       }
     );
     
+  }
+
+  go(rota:string){
+    window.location.href = rota;
   }
 
 

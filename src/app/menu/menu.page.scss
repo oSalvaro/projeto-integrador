@@ -1,4 +1,36 @@
-.logoff{
-    margin-top: 5%;
-    margin-left: 4%;
-}
+.custom-menu {
+    --background: #f0f8f0; /* Light, calming background color */
+    --ion-background-color: #f0f8f0;
+  }
+  
+  .menu-list {
+    padding-top: 1rem;
+  }
+  
+  .menu-item {
+    --ion-item-background: transparent;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    --ion-item-background: rgba(76, 175, 80, 0.15); /* Light green on hover */
+  }
+  
+  .menu-icon {
+    color: #4caf50; /* Green color for icons */
+    font-size: 1.4rem; /* Larger icon size */
+    margin-right: 0.8rem;
+  }
+  
+  .logoff-button {
+    margin-top: 1rem;
+    --border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .div-logoff{
+    margin: 0 5% 0 5%;
+  }

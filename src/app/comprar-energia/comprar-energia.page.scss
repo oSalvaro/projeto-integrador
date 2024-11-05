@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3f3f3f;
+  }
+  .form-card {
+    width: 300px;
+    padding: 20px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+  }
+  ion-button {
+    --color: white;
+    width: 100%;
+    margin-top: 20px;
+  }

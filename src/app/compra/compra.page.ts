@@ -10,7 +10,7 @@ import { LocalstorageService } from '../service/localstorage.service';
   styleUrls: ['./compra.page.scss'],
 })
 export class CompraPage implements OnInit {
-  public title:string = 'Compra';
+  public title:string = 'Comprar energia';
   public id:number    = 0;
   public isShowDeleteDialog:boolean = false; 
   public alertButtons:Array<any> = [];
@@ -24,6 +24,7 @@ export class CompraPage implements OnInit {
 
   public venda:Array<any> = [];
   ngOnInit(){
+    this.ls.set('venda_id_temp',0);
     this.listar();
     this.listargerador();
   }
@@ -36,8 +37,7 @@ export class CompraPage implements OnInit {
     loading.present();
 
     this.requisicao_service.get({
-      controller:'venda-listar-unico',
-      user_id:this.ls.get('user_id')
+      controller:'venda-listar-status'
     })
     .subscribe(
       (_res:any) => {
@@ -60,8 +60,34 @@ export class CompraPage implements OnInit {
     );
   }
 
-  comprar(){
-      
+  comprar(id_venda:number){
+    this.ls.set('venda_id_temp',id_venda);
+    this.isShowDeleteDialog = true;
+    this.alertButtons = [{
+      text: 'Não',
+      role: 'cancel',
+      handler: () => {
+        this.isShowDeleteDialog = false;
+      },
+    },
+    {
+      text: 'Sim',
+      role: 'confirm',
+      handler: () => {
+        this.requisicao_service.get({
+          controller: 'venda-listar-status',
+        })
+        .subscribe (
+          () => {
+          location.href = '/comprar-energia';
+        } 
+      );
+    },
+  }];
+  }
+
+  go(rota:string){
+    window.location.href = rota;
   }
 
 }

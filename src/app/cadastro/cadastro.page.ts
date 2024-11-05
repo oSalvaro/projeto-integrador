@@ -58,7 +58,7 @@ export class CadastroPage implements OnInit {
     this.requisicao_service.post(fd)
     .subscribe(
       () => {
-        location.href = '/usuarios';
+        location.href = '/login';
       }
     );
   }

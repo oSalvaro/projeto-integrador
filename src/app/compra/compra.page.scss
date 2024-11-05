@@ -1,4 +1,65 @@
-.titulo-tabela{
-    font-size: 0.8em;
-    margin: 10%;
+.green-theme {
+  background-color: #f0f8f0;
+  color: #2e5d2e;
+}
+
+.titulo-tabela {
+  text-align: left;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.table {
+  width: 100%;
+  margin: 16px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  ion-card {
+    margin: 8px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  ion-card-content p {
+    margin: 4px 0;
+    font-size: 14px;
+  }
 }
