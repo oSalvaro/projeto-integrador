@@ -1,23 +1,23 @@
-<ion-content [fullscreen]="true">
-    
-      <div class="container">
-        <div class="form-card">
-          <ion-item>
-            <ion-label position="floating" >Seu CPF</ion-label>
-            <ion-input type="text" placeholder="000.000.000-00"></ion-input>
-          </ion-item>
-          <br>
-          <ion-item>
-            
-            <ion-select label="Selecione a forma de pagamento" label-placement="floating">
-              <ion-select-option value="Cartao-credito">Cartão de Crédito</ion-select-option>
-              <ion-select-option value="Pix">Pix</ion-select-option>
-              <ion-select-option value="Cartao-debito">Cartão de Débito</ion-select-option>
-              <ion-select-option value="Boleto">Boleto</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-button expand="block" (click)="comprar()">Finalizar</ion-button>
-        </div>
+<ion-content [fullscreen]="true" class="pagamento-content">
+  <div class="pagamento-container">
+    <h2 class="titulo-pagamento"><strong>Finalizar Compra</strong></h2>
+    <div class="form-card">
+      <ion-item>
+        <ion-label position="floating">Seu CPF</ion-label>
+        <ion-input type="text" placeholder="000.000.000-00"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-select label="Selecione a forma de pagamento" label-placement="floating">
+          <ion-select-option value="Cartao-credito">Cartão de Crédito</ion-select-option>
+          <ion-select-option value="Pix">Pix</ion-select-option>
+          <ion-select-option value="Cartao-debito">Cartão de Débito</ion-select-option>
+          <ion-select-option value="Boleto">Boleto</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="botao-div">
+        <ion-button expand="block" class="botao-form" (click)="comprar()">Finalizar</ion-button>
       </div>
-
+    </div>
+  </div>
 </ion-content>

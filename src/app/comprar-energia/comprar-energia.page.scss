@@ -1,18 +1,88 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #3f3f3f;
+/* Container principal */
+.pagamento-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+  padding: 1rem;
+}
+
+.pagamento-container {
+  width: 100%;
+  max-width: 400px; /* Largura máxima do formulário */
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Título */
+.titulo-pagamento {
+  text-align: center;
+  color: #4CAF50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo dos inputs e select */
+ion-item {
+  --background: transparent;
+  --border-radius: 8px;
+}
+
+.input-form,
+.select-form {
+  --placeholder-color: #888;
+  color: #333;
+}
+
+/* Botão de finalizar */
+.botao-div {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.botao-form {
+  --background: #4CAF50;
+  --border-radius: 8px;
+  --padding-start: 1.5rem;
+  --padding-end: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  .form-card {
-    width: 300px;
-    padding: 20px;
-    background-color: #4CAF50;
-    border-radius: 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  ion-button {
-    --color: white;
-    width: 100%;
-    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pagamento-container {
+    padding: 1.5rem;
   }
+
+  .titulo-pagamento {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagamento-container {
+    padding: 1rem;
+  }
+
+  .titulo-pagamento {
+    font-size: 1.2rem;
+  }
+}
